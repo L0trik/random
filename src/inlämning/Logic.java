@@ -3,9 +3,8 @@ package inlämning;
 // räknar ord, rader och kollar stop
 public class Logic {
 
-
     public int wordCount(String text) {
-        if (text.isEmpty()) return 0;
+        if (text.isBlank()) return 0;
         return text.trim().split("\\s+").length;
     }
 

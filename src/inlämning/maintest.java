@@ -6,45 +6,58 @@ public class maintest {
 
     @Test
     public void testisStop() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "stop";
 
         assertTrue(logic.isStop(text));
     }
     @Test
     public void testisStop2() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "Hej";
 
         assertFalse(logic.isStop(text));
     }
     @Test
     public void testwordCount() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "hej på dig";
+        int expected = 3;
 
-        assertTrue(logic.wordCount(text) == 3);
+        assertEquals(3,logic.wordCount(text));
     }
     @Test
     public void testwordCount2() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "hej på dig igen";
+        int expected = 4;
 
-        assertFalse(logic.wordCount(text) == 3);
+
+        assertEquals(4, logic.wordCount(text));
     }
 
     @Test
     public void testletterCount() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "hej på dig";
+        int expected = 8;
 
-        assertTrue(logic.letterCount(text) == 8);
+        assertEquals(8, logic.letterCount(text));
     }
     @Test
     public void testletterCount2() {
-        inlämning.Logic logic = new inlämning.Logic();
+        Logic logic = new Logic();
         String text = "hej på dig igen";
+        int expected = 12;
 
-        assertFalse(logic.letterCount(text) == 8);
+        assertEquals(12, logic.letterCount(text));
+    }
+    @Test
+    public void testcountLine() {
+        Logic logic = new Logic();
+        String text = "hej\n jag\n heter\n christoffer";
+        int expected = 4;
+
+        assertEquals(4,logic.countLines(text));
     }
 }
